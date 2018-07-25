@@ -1,0 +1,49 @@
+//keyframe animations for text animations
+@keyframes moveinleft {
+	0%{
+		opacity: 0;
+		transform: translateX(-12.5rem);
+	}
+
+	60%{
+		opacity: 50%;
+		transform: translateX(.9rem);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveinright{
+	0%{
+		opacity: 0;
+		transform: translateX(12.5rem);
+	}
+
+	60%{
+		opacity: 50%;
+		transform: translateX(-.9rem);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+
+	}
+}
+
+// keyframe method animation for btn animation
+@keyframes moveinbottom{
+	0%{
+		opacity: 0;
+		transform: translateY(5rem);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+
+	}
+}
