@@ -2,8 +2,8 @@
 
     //for functionality
     perspective: 150rem;                    
-    -moz-perspective: 150rem;  
-    position: relative;             //to work perspective in mozilla
+    -moz-perspective: 150rem;                //to work perspective in mozilla
+    position: relative;            
     height: 52rem;
 
     &__side {
@@ -97,6 +97,18 @@
             background-image: linear-gradient(to right bottom, 
                                 rgba($color-secondary-light, .85),
                                 rgba($color-secondary-dark, .85));
+        }
+
+        &--2 {            
+            background-image: linear-gradient(to right bottom, 
+                                rgba($color-primary-light, .85),
+                                rgba($color-primary-dark, .85));
+        }
+
+        &--3 {            
+            background-image: linear-gradient(to right bottom, 
+                                rgba($color-tertiary-light, .85),
+                                rgba($color-tertiary-dark, .85));
         }
     }
 
