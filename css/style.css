@@ -532,7 +532,10 @@ body {
   color: #f7f7f7; }
   .footer__logo-box {
     text-align: center;
-    margin-bottom: 8rem; }
+    margin-bottom: 8rem;
+    border-bottom: 1px solid #777;
+    display: inline-block;
+    transform: translateX(67rem); }
   .footer__logo {
     width: 15rem;
     height: auto; }
@@ -644,6 +647,7 @@ body {
   left: 0;
   z-index: 1500;
   opacity: 0;
+  visibility: hidden;
   width: 0;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
@@ -684,7 +688,8 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%; }
+  width: 100%;
+  visibility: visible; }
 
 .navigation__icon {
   position: relative;
