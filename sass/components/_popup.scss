@@ -32,6 +32,13 @@
     &__left {
         width: 33.33333%;
         display: table-cell;
+
+        @include respond(tab-portrait) {
+            width: 100%;
+            height: auto;
+
+            display: block;
+        }
     }
 
     &__right {
@@ -40,11 +47,23 @@
         vertical-align: middle;
         padding: 3rem 5rem;
 
-    }
+        @include respond(tab-portrait) {
+            width: 100%;
+            display: block;
+        }
+
+    }    
 
     &__img {
         display: block;
         width: 100%;
+        @include respond(tab-portrait) {
+            width: 50%;
+            display: inline-block;
+            float: left;
+            @include clearfix;
+        }
+
     }
 
     &__text {
@@ -96,4 +115,7 @@
         }
 
     }
+
+
+    
 }
