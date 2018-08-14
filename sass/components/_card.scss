@@ -14,6 +14,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 1rem;
         overflow: hidden;
@@ -59,19 +60,30 @@
         // border-top-right-radius: 3px;
 
       
-
         &--1 {
-            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            @supports (background-blend-mode: screen) {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+                                url(../img/nat-5.jpg);
+            }
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .65), rgba($color-secondary-dark, .65)),
                                 url(../img/nat-5.jpg);
         }
 
         &--2 {
-            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+            @supports (background-blend-mode: screen) {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+                                url(../img/nat-6.jpg);
+            }
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .65), rgba($color-primary-dark, .65)),
                                 url(../img/nat-6.jpg);
         }
 
         &--3 {
-            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+            @supports (background-blend-mode: screen) {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+                                url(../img/nat-7.jpg);
+            }
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .65), rgba($color-tertiary-dark, .65)),
                                 url(../img/nat-7.jpg);
         }
     }
@@ -164,7 +176,9 @@
 
 
 
-    @include respond(tab-portrait) {
+    //@include respond(tab-portrait) {
+     @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {                                     // <-- this line basically means apply below styles when a device is being used where we can not hover
         height: auto;
         border-radius: 3px;
         background-color: $color-white;

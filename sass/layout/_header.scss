@@ -1,13 +1,23 @@
 .header{
-	height: 95vh;
-	background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark , 0.6) ), 
-						url(../img/asad.jpg);
+	height: 85vh;
+	background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.6), rgba($color-secondary-dark , 0.6) ), 
+						url(../img/asad-small.jpg);
 	background-size: cover;
 	background-position: center;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
-	clip-path: //polygon(0 0, 100% 25vh, 100% 100%, 0 75%);
-				polygon(0 0, 100% 0, 100% 100%, 0 75vh);
 	position: relative;
+	
+	@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
+		clip-path: //polygon(0 0, 100% 25vh, 100% 100%, 0 75%);
+				polygon(0 0, 100% 0, 100% 100%, 0 75vh);
+		height: 95vh;
+	}
+
+	@media only screen and (max-resolution: 192dpi) and (min-width:37.5em), 
+			only screen and (min-width: 125em) {
+		background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark , 0.6) ), 
+						url(../img/asad.jpg);
+	}
 
 	@include respond(phone) {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85vh);
